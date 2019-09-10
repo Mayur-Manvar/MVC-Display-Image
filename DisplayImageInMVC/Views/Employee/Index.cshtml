@@ -1,4 +1,5 @@
 ﻿@model DisplayImageInMVC.Models.tblEmployee
+@using DisplayImageInMVC.CustomHtmlHelpers
 
 @{
     ViewBag.Title = "Index";
@@ -70,8 +71,12 @@
             @Html.DisplayNameFor(model => model.Photo)
         </dt>
 
-        <div class="display-field">
+        @*<div class="display-field">
             <img src="@Url.Content(@Model.Photo)" alt="@Model.AlternateText" />
+        </div>*@
+
+        <div class="display-field">
+            @Html.Image(@Model.Photo,@Model.AlternateText)
         </div>
     </dl>
 </div>
